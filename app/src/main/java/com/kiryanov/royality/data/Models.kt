@@ -1,8 +1,9 @@
 package com.kiryanov.royality.data
 
-data class User(val corId: Int,
-                val corName: String,
+data class User(val id: Int,
                 val phone: String,
-                val city: String,
-                var cor_bill_1: String,
-                var cor_bill_2: String)
+                val sex: String,
+                val name: String,
+                val surname: String,
+                val patronymic: String,
+                val city: String)

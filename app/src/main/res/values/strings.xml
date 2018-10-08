@@ -17,4 +17,18 @@
     <string name="settings">Настройки</string>
     <string name="exit">Выйти</string>
     <string name="feedback">Обратная связь</string>
+
+    <string name="response">
+        {
+            "id":12,
+            "phone":"8-909-400-92-91",
+            "sex":"m",
+            "name":"Evgeniy",
+            "surname":"Kiryanov",
+            "patronymic":"Nikolaevich",
+            "city":"Salsk"
+        }
+    </string>
+    <string name="sign_in">Войти</string>
+    <string name="continue_without_sign_up">Продолжить без регистрации</string>
 </resources>

@@ -1,7 +1,12 @@
 package com.evgeniy.royality
 
 import android.app.Application
+import com.evgeniy.restapp.DI.Modules.AndroidModule
+import com.evgeniy.restapp.DI.Modules.NetModule
+import com.evgeniy.restapp.DI.Modules.RepositoryModule
 import com.evgeniy.royality.DI.AppComponent
+import com.evgeniy.royality.DI.DaggerAppComponent
+import com.kiryanov.royality.R
 
 class App : Application() {
 
@@ -12,15 +17,15 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-//        component = initDaggerComponent()
-//        component.inject(this)
+        component = initDaggerComponent()
+        component.inject(this)
     }
 
-//    private fun initDaggerComponent(): AppComponent {
-//        return DaggerAppComponent.builder()
-//                .netModule(NetModule(getString(R.string.base_url)))
-//                .androidModule(AndroidModule(this))
-//                .repositoryModule(RepositoryModule())
-//                .build()
-//    }
+    private fun initDaggerComponent(): AppComponent {
+        return DaggerAppComponent.builder()
+                .netModule(NetModule(getString(R.string.base_url)))
+                .androidModule(AndroidModule(this))
+                .repositoryModule(RepositoryModule())
+                .build()
+    }
 }
