@@ -5,33 +5,41 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/bonuses"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:title="@string/bonuses" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/coupons"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/coupons" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/chats"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/chats" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/invite"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/invite" />
+        <item
+            android:id="@+id/promo"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/promo" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/feedback">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/support"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="@string/support" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/settings"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="@string/settings" />
+            <item
+                android:id="@+id/exit"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/exit" />
         </menu>
     </item>
 

@@ -8,4 +8,13 @@
     <string name="action_settings">Settings</string>
 
     <string name="base_url">Settings</string>
+    <string name="bonuses">Бонусы</string>
+    <string name="coupons">Купоны</string>
+    <string name="chats">Чаты</string>
+    <string name="invite">Пригласить друга</string>
+    <string name="promo">Ввести промокод</string>
+    <string name="support">Связаться в чате</string>
+    <string name="settings">Настройки</string>
+    <string name="exit">Выйти</string>
+    <string name="feedback">Обратная связь</string>
 </resources>
