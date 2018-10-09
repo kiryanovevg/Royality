@@ -37,6 +37,10 @@
             android:name=".mvp.LoginScreen.LoginActivity">
         </activity>
 
+        <activity
+            android:name=".mvp.RegistrationScreen.RegistrationActivity">
+        </activity>
+
     </application>
 
 </manifest>

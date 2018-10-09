@@ -24,8 +24,15 @@
     <string name="activity_login_title">Вход</string>
     <string name="login">Логин</string>
     <string name="password">Пароль</string>
-    <string name="sign_up">Зарегистрироваться</string>
+    <string name="sign_up">Регистрация</string>
+    <string name="sign_up_2">Зарегистрироваться</string>
     <string name="login_failed">Неверный логин и/или пароль</string>
     <string name="empty_fields">Заполните все поля</string>
     <string name="nav_header_info">Войдите в свой аккаунт, чтобы пользоваться всеми преимуществами Royality</string>
+    <string name="activity_registration_title">Регистрация</string>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="email">E-mail</string>
+    <string name="user_successful_registered">Пользователь успешно зарегистрирован</string>
+    <string name="registration_failed">Произошла ошибка при регистрации</string>
 </resources>

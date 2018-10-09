@@ -1,6 +1,7 @@
 package com.kiryanov.royality.mvp.LoginScreen
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.ActionBar
@@ -9,6 +10,8 @@ import android.view.View
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.kiryanov.royality.R
+import com.kiryanov.royality.REQUEST_REGISTRATION
+import com.kiryanov.royality.mvp.RegistrationScreen.RegistrationActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : MvpAppCompatActivity(), LoginView {
@@ -27,7 +30,12 @@ class LoginActivity : MvpAppCompatActivity(), LoginView {
         sign_in.setOnClickListener {
             presenter.login(et_login.text.toString(), et_password.text.toString().hashCode())
         }
-        sign_up.setOnClickListener {  }
+        sign_up.setOnClickListener {
+            startActivityForResult(
+                    Intent(this, RegistrationActivity::class.java),
+                    REQUEST_REGISTRATION
+            )
+        }
     }
 
     override fun setLoadingProgressVisibility(visibility: Boolean) {
@@ -50,5 +58,13 @@ class LoginActivity : MvpAppCompatActivity(), LoginView {
         }
 
         return true
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == REQUEST_REGISTRATION) {
+            if (resultCode == Activity.RESULT_OK) {
+               presenter.viewState.showMessage(R.string.user_successful_registered)
+            }
+        }
     }
 }
