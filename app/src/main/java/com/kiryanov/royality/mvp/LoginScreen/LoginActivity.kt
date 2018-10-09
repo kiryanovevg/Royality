@@ -1,13 +1,15 @@
 package com.kiryanov.royality.mvp.LoginScreen
 
-import android.content.Intent
+import android.app.Activity
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import android.support.design.widget.Snackbar
+import android.support.v7.app.ActionBar
+import android.view.MenuItem
+import android.view.View
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.kiryanov.royality.R
-import com.kiryanov.royality.mvp.MainScreen.MainActivity
-import com.kiryanov.royality.mvp.RegistrationScreen.RegistrationActivity
+import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : MvpAppCompatActivity(), LoginView {
 
@@ -17,27 +19,36 @@ class LoginActivity : MvpAppCompatActivity(), LoginView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        setSupportActionBar(toolbar)
+
+        (supportActionBar as ActionBar).setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setTitle(R.string.activity_login_title)
+
+        sign_in.setOnClickListener {
+            presenter.login(et_login.text.toString(), et_password.text.toString().hashCode())
+        }
+        sign_up.setOnClickListener {  }
     }
 
-    override fun setFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-                .replace(R.id.login_container, fragment)
-                .commit()
+    override fun setLoadingProgressVisibility(visibility: Boolean) {
+        loading.visibility = if (visibility) View.VISIBLE else View.GONE
+        root.visibility = if (visibility) View.GONE else View.VISIBLE
     }
 
-    override fun changeFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-                .replace(R.id.login_container, fragment)
-                .addToBackStack(null)
-                .commit()
-    }
-
-    override fun login() {
-        startActivity(Intent(this, MainActivity::class.java))
+    override fun loginSuccessful() {
+        setResult(Activity.RESULT_OK)
         finish()
     }
 
-    override fun registration() {
-        startActivity(Intent(this, RegistrationActivity::class.java))
+    override fun showMessage(msg: Int) {
+        Snackbar.make(coordinator_layout, msg, Snackbar.LENGTH_LONG).show()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            android.R.id.home -> finish()
+        }
+
+        return true
     }
 }

@@ -7,7 +7,8 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="base_url">Settings</string>
+    <string name="base_url">http://23.97.159.48:5000/</string>
+
     <string name="bonuses">Бонусы</string>
     <string name="coupons">Купоны</string>
     <string name="chats">Чаты</string>
@@ -18,17 +19,13 @@
     <string name="exit">Выйти</string>
     <string name="feedback">Обратная связь</string>
 
-    <string name="response">
-        {
-            "id":12,
-            "phone":"8-909-400-92-91",
-            "sex":"m",
-            "name":"Evgeniy",
-            "surname":"Kiryanov",
-            "patronymic":"Nikolaevich",
-            "city":"Salsk"
-        }
-    </string>
     <string name="sign_in">Войти</string>
     <string name="continue_without_sign_up">Продолжить без регистрации</string>
+    <string name="activity_login_title">Вход</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="sign_up">Зарегистрироваться</string>
+    <string name="login_failed">Неверный логин и/или пароль</string>
+    <string name="empty_fields">Заполните все поля</string>
+    <string name="nav_header_info">Войдите в свой аккаунт, чтобы пользоваться всеми преимуществами Royality</string>
 </resources>

@@ -23,4 +23,11 @@
     <style name="AppTheme.AppBar" parent="ThemeOverlay.AppCompat.Light" />
     <style name="AppTheme.ToolBar" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="TextInputLayout" parent="@android:style/TextAppearance">
+        <!--<item name="colorControlNormal">#ff0000</item>
+        <item name="colorControlActivated">#00ff3c</item>
+        <item name="colorControlHighlight">#ffe100</item>-->
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
 </resources>

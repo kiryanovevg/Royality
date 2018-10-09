@@ -30,11 +30,11 @@
         </activity>
 
         <activity
-            android:name=".mvp.LoginScreen.LoginActivity">
+            android:name=".mvp.GreetingScreen.GreetingActivity">
         </activity>
 
         <activity
-            android:name=".mvp.RegistrationScreen.RegistrationActivity">
+            android:name=".mvp.LoginScreen.LoginActivity">
         </activity>
 
     </application>

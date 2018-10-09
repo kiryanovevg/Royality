@@ -5,5 +5,8 @@
     <color name="colorAccent">#016aeb</color>
 
     <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
     <color name="background">#ececec</color>
+
+    <color name="nav_view_header_background">#ebf8ff</color>
 </resources>

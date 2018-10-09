@@ -5,6 +5,7 @@ import com.evgeniy.restapp.DI.Modules.NetModule
 import com.evgeniy.restapp.DI.Modules.RepositoryModule
 import com.evgeniy.royality.App
 import com.kiryanov.royality.CurrentUser
+import com.kiryanov.royality.mvp.LoginScreen.LoginPresenter
 import com.kiryanov.royality.mvp.MainScreen.MainPresenter
 import dagger.Component
 import javax.inject.Singleton
@@ -16,4 +17,5 @@ interface AppComponent {
     fun inject(app: App)
     fun inject(currentUser: CurrentUser)
     fun inject(mainPresenter: MainPresenter)
+    fun inject(loginPresenter: LoginPresenter)
 }
