@@ -3,6 +3,7 @@
     <color name="colorPrimary">#fafafa</color>
     <color name="colorPrimaryDark">#e0e0e0</color>
     <color name="colorAccent">#016aeb</color>
+    <color name="colorAccentDark">#003f8c</color>
 
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>

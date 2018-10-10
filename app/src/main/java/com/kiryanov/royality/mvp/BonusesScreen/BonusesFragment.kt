@@ -43,7 +43,6 @@ class BonusesFragment : MvpAppCompatFragment(),
                 return true
             }
             R.id.bonuses -> {
-                presenter.setFragment(BonusesFragment(), R.string.activity_login_title)
                 return true
             }
             R.id.shopping -> {
