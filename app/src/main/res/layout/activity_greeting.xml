@@ -35,17 +35,19 @@
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/sign_in"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/long_btn_width"
             android:layout_height="wrap_content"
             android:text="@string/sign_in"
+            style="@style/AppTheme.SolidButton"
             />
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_continue"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/long_btn_width"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/continue_without_sign_up"
+            style="@style/AppTheme.StrokeButton"
             />
 
     </LinearLayout>
