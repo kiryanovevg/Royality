@@ -23,7 +23,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="16dp"
             android:visibility="@{user != null ? View.VISIBLE : View.GONE}"
             >
 

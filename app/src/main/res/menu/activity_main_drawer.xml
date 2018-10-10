@@ -6,23 +6,23 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/bonuses"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_bonuses"
             android:title="@string/bonuses" />
         <item
             android:id="@+id/coupons"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_shopping"
             android:title="@string/coupons" />
         <item
             android:id="@+id/chats"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_chats"
             android:title="@string/chats" />
         <item
             android:id="@+id/invite"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_invite"
             android:title="@string/invite" />
         <item
             android:id="@+id/promo"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_shopping_cart"
             android:title="@string/promo" />
     </group>
 
@@ -30,15 +30,15 @@
         <menu>
             <item
                 android:id="@+id/support"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_menu_send"
                 android:title="@string/support" />
             <item
                 android:id="@+id/settings"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_settings"
                 android:title="@string/settings" />
             <item
                 android:id="@+id/exit"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_exit"
                 android:title="@string/exit" />
         </menu>
     </item>
