@@ -1,5 +1,7 @@
 package com.kiryanov.royality.mvp.PlacesScreen
 
+import android.animation.ValueAnimator
+import android.databinding.DataBindingUtil
 import android.graphics.Rect
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -14,6 +16,8 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import com.kiryanov.royality.R
 import com.kiryanov.royality.RecyclerViewAdapter
 import com.kiryanov.royality.data.Category
+import com.kiryanov.royality.databinding.FragmentBonusesBinding
+
 
 class PlacesFragment : MvpAppCompatFragment(), PlacesView {
 
@@ -22,17 +26,44 @@ class PlacesFragment : MvpAppCompatFragment(), PlacesView {
     @InjectPresenter
     lateinit var presenter: PlacesPresenter
 
+    private lateinit var binding: FragmentBonusesBinding
+
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        val view = layoutInflater.inflate(R.layout.fragment_bonuses, null)
+        binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_bonuses, container, false)
 
-        val rv = view.findViewById<RecyclerView>(R.id.rv)
-        initRV(rv)
+        initRV(binding.rv)
+
+        binding.btnFullscreen.setOnClickListener{
+            val minHeight = resources.getDimension(R.dimen.map_height).toInt()
+            val height = if (binding.mapRoot.measuredHeight == minHeight) {
+                binding.btnFullscreen.setImageResource(R.drawable.ic_fullscreen_exit)
+
+                binding.rootLayout.measuredHeight
+            } else {
+                binding.btnFullscreen.setImageResource(R.drawable.ic_fullscreen)
+
+                minHeight
+            }
+
+            val anim = ValueAnimator.ofInt(binding.mapRoot.measuredHeight, height)
+            anim.addUpdateListener { valueAnimator ->
+                val value = valueAnimator.animatedValue as Int
+                val layoutParams = binding.mapRoot.layoutParams
+                layoutParams.height = value
+                binding.mapRoot.layoutParams = layoutParams
+
+                val alpha = 1 - (value - minHeight) * 1.0 / (binding.rootLayout.measuredHeight - minHeight)
+                binding.rootLayout.alpha = alpha.toFloat()
+            }
+            anim.duration = 700
+            anim.start()
+        }
 
 
-        return view
+        return binding.root
     }
 
     private fun initRV(rv: RecyclerView) {

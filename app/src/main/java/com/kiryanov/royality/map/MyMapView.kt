@@ -15,7 +15,7 @@ class MyMapView(context: Context, attrs: AttributeSet) : MapView(context, attrs)
         setBuiltInZoomControls(false)
         setMultiTouchControls(true)
         minZoomLevel = MIN_ZOOM_LEVEL
-        controller.setZoom(MIN_ZOOM_LEVEL)
+        controller.setZoom(MIN_ZOOM_LEVEL + 1)
         controller.setCenter(GeoPoint(LAT, LNG))
     }
 }
