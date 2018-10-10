@@ -1,23 +1,21 @@
 package com.kiryanov.royality.mvp.BonusesScreen
 
-import android.graphics.Rect
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import android.support.design.widget.BottomNavigationView
+import android.support.v4.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.kiryanov.royality.R
-import com.kiryanov.royality.RecyclerViewAdapter
-import com.kiryanov.royality.data.Category
+import com.kiryanov.royality.mvp.MainScreen.MainActivity
+import com.kiryanov.royality.mvp.PlacesScreen.PlacesFragment
 
-class BonusesFragment : MvpAppCompatFragment(), BonusesView {
-
-    private lateinit var adapter: RecyclerViewAdapter<Category, BonusesPresenter>
+class BonusesFragment : MvpAppCompatFragment(),
+        BonusesView,
+        BottomNavigationView.OnNavigationItemSelectedListener {
 
     @InjectPresenter
     lateinit var presenter: BonusesPresenter
@@ -26,57 +24,45 @@ class BonusesFragment : MvpAppCompatFragment(), BonusesView {
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        val view = layoutInflater.inflate(R.layout.fragment_bonuses, null)
+        val view = inflater.inflate(R.layout.fragment_places, container, false)
 
-        val rv = view.findViewById<RecyclerView>(R.id.rv)
-        initRV(rv)
+        val navigationView = view.findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        navigationView.setOnNavigationItemSelectedListener(this)
 
 
         return view
     }
 
-    private fun initRV(rv: RecyclerView) {
-        adapter = RecyclerViewAdapter(R.layout.item_bonuses_category, presenter)
-        rv.adapter = adapter
-        rv.layoutManager = LinearLayoutManager(
-                context,
-                LinearLayoutManager.HORIZONTAL,
-                false
-        )
-        rv.addItemDecoration(object : RecyclerView.ItemDecoration() {
-            override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
-                val offset = 120
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        val currentFragment = fragmentManager!!.findFragmentById(R.id.places_container)
 
-                if (parent.getChildAdapterPosition(view) == 0) {
-                    outRect.left += offset
-                }
-                if (parent.getChildAdapterPosition(view) == adapter.itemCount - 1) {
-                    outRect.right += offset
-                }
+        when (item.itemId) {
+            R.id.places -> {
+                if (currentFragment !is PlacesFragment)
+                    presenter.setFragment(PlacesFragment(), R.string.places)
+                return true
             }
-        })
-
-        val list = object : ArrayList<Category>() {
-            init {
-                add(Category("Eda", R.drawable.ic_menu_compass))
-                add(Category("asd", R.drawable.ic_menu_camera))
-                add(Category("sad", R.drawable.ic_menu_manage))
-                add(Category("dsa", R.drawable.ic_menu_mylocation))
-                add(Category("asd", R.drawable.ic_menu_camera))
-                add(Category("sad", R.drawable.ic_menu_manage))
-                add(Category("dsa", R.drawable.ic_menu_share))
-                add(Category("asd", R.drawable.ic_menu_camera))
-                add(Category("sad", R.drawable.ic_menu_manage))
-                add(Category("dsa", R.drawable.ic_menu_manage))
+            R.id.bonuses -> {
+                presenter.setFragment(BonusesFragment(), R.string.activity_login_title)
+                return true
+            }
+            R.id.shopping -> {
+                return true
+            }
+            R.id.cash_back -> {
+                return true
             }
         }
-
-        adapter.addAll(list)
-        adapter.notifyDataSetChanged()
+        return false
     }
 
-    override fun showMessage(msg: String) {
-        Snackbar.make(view!!, msg, Snackbar.LENGTH_LONG).show()
-        Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
+    override fun setFragment(fragment: Fragment) {
+        fragmentManager!!.beginTransaction()
+                .replace(R.id.places_container, fragment)
+                .commit()
+    }
+
+    override fun setToolbarTitle(title: Int) {
+        (activity as MainActivity).presenter.viewState.setToolbarTitle(title)
     }
 }

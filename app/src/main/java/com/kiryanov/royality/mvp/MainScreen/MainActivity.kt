@@ -21,7 +21,6 @@ import com.kiryanov.royality.databinding.NavHeaderMainBinding
 import com.kiryanov.royality.mvp.BonusesScreen.BonusesFragment
 import com.kiryanov.royality.mvp.GreetingScreen.GreetingActivity
 import com.kiryanov.royality.mvp.LoginScreen.LoginActivity
-import com.kiryanov.royality.mvp.PlacesScreen.PlacesFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -78,12 +77,11 @@ class MainActivity : MvpAppCompatActivity(),
 
         when (item.itemId) {
             R.id.bonuses -> {
-                if (currentFragment !is  PlacesFragment)
-                    presenter.setFragment(PlacesFragment(), R.string.places)
+                if (currentFragment !is BonusesFragment)
+                    presenter.setFragment(BonusesFragment(), R.string.places)
             }
             R.id.coupons -> {
-                if (currentFragment !is  BonusesFragment)
-                    presenter.setFragment(BonusesFragment(), R.string.bonuses)
+
             }
             R.id.exit -> {
                 CurrentUser.getInstance().logout()

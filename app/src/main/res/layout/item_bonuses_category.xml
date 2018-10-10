@@ -8,7 +8,7 @@
 
         <variable
             name="presenter"
-            type="com.kiryanov.royality.mvp.BonusesScreen.BonusesPresenter"/>
+            type="com.kiryanov.royality.mvp.PlacesScreen.PlacesPresenter"/>
     </data>
 
     <RelativeLayout
