@@ -4,7 +4,6 @@ import android.animation.ValueAnimator
 import android.databinding.DataBindingUtil
 import android.graphics.Rect
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -107,7 +106,7 @@ class PlacesFragment : MvpAppCompatFragment(), PlacesView {
     }
 
     override fun showMessage(msg: String) {
-        Snackbar.make(view!!, msg, Snackbar.LENGTH_LONG).show()
+//        Snackbar.make(view!!, msg, Snackbar.LENGTH_LONG).show()
         Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
     }
 }
