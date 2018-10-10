@@ -21,6 +21,7 @@ import com.kiryanov.royality.databinding.NavHeaderMainBinding
 import com.kiryanov.royality.mvp.BonusesScreen.BonusesFragment
 import com.kiryanov.royality.mvp.GreetingScreen.GreetingActivity
 import com.kiryanov.royality.mvp.LoginScreen.LoginActivity
+import com.kiryanov.royality.mvp.PlacesScreen.PlacesFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -77,8 +78,12 @@ class MainActivity : MvpAppCompatActivity(),
 
         when (item.itemId) {
             R.id.bonuses -> {
+                if (currentFragment !is  PlacesFragment)
+                    presenter.setFragment(PlacesFragment(), R.string.places)
+            }
+            R.id.coupons -> {
                 if (currentFragment !is  BonusesFragment)
-                    presenter.viewState.setFragment(BonusesFragment(), R.string.bonuses)
+                    presenter.setFragment(BonusesFragment(), R.string.bonuses)
             }
             R.id.exit -> {
                 CurrentUser.getInstance().logout()
@@ -91,11 +96,14 @@ class MainActivity : MvpAppCompatActivity(),
         return true
     }
 
-    override fun setFragment(fragment: Fragment, title: Int) {
-        supportActionBar?.title = getString(title)
+    override fun setFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
                 .replace(R.id.main_container, fragment)
                 .commit()
+    }
+
+    override fun setToolbarTitle(title: Int) {
+        supportActionBar?.title = getString(title)
     }
 
     override fun setFirstItemChecked() {

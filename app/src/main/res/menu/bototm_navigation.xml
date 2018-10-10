@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/places"
+        android:icon="@drawable/ic_home_black"
+        android:title="@string/places" />
+
+    <item
+        android:id="@+id/bonuses"
+        android:icon="@drawable/ic_bonuses"
+        android:title="@string/bonuses" />
+
+    <item
+        android:id="@+id/shopping"
+        android:icon="@drawable/ic_shopping"
+        android:title="@string/shopping" />
+
+    <item
+        android:id="@+id/cash_back"
+        android:icon="@drawable/ic_cash_back"
+        android:title="@string/cash_back" />
+</menu>

@@ -1,19 +1,17 @@
-package com.kiryanov.royality.mvp.MainScreen
+package com.kiryanov.royality.mvp.PlacesScreen
 
 import android.support.v4.app.Fragment
 import com.arellomobile.mvp.InjectViewState
-import com.kiryanov.royality.R
 import com.kiryanov.royality.mvp.BasePresenter
-import com.kiryanov.royality.mvp.PlacesScreen.PlacesFragment
+import com.kiryanov.royality.mvp.BonusesScreen.BonusesFragment
 
 @InjectViewState
-class MainPresenter : BasePresenter<MainView>() {
+class PlacesPresenter : BasePresenter<PlacesView>() {
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
 
-        setFragment(PlacesFragment(), R.string.places)
-        viewState.setFirstItemChecked()
+        viewState.setFragment(BonusesFragment())
     }
 
     fun setFragment(fragment: Fragment, title: Int) {
