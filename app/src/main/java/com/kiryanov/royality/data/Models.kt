@@ -7,3 +7,5 @@ data class User(val id: Int,
                 val surname: String,
                 val patronymic: String,
                 val city: String)
+
+data class Category(val name: String, val resId: Int)

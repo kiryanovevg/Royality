@@ -35,4 +35,5 @@
     <string name="email">E-mail</string>
     <string name="user_successful_registered">Пользователь успешно зарегистрирован</string>
     <string name="registration_failed">Произошла ошибка при регистрации</string>
+    <string name="sales">Акции</string>
 </resources>

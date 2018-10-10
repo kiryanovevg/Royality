@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="item"
+            type="com.kiryanov.royality.data.Category"/>
+
+        <variable
+            name="presenter"
+            type="com.kiryanov.royality.mvp.BonusesScreen.BonusesPresenter"/>
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->presenter.onItemClick(item)}"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_margin="6dp"
+            >
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:padding="18dp"
+                android:background="@drawable/corner_border"
+                android:res_src="@{item.resId}"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{item.name}"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

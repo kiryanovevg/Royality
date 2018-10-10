@@ -6,4 +6,5 @@ import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
 
 @StateStrategyType(AddToEndSingleStrategy::class)
 interface BonusesView : MvpView {
+    fun showMessage(msg: String)
 }
