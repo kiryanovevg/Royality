@@ -8,6 +8,7 @@ import com.kiryanov.royality.CurrentUser
 import com.kiryanov.royality.mvp.LoginScreen.LoginPresenter
 import com.kiryanov.royality.mvp.MainScreen.MainPresenter
 import com.kiryanov.royality.mvp.RegistrationScreen.RegistrationPresenter
+import com.kiryanov.royality.mvp.ShopListScreen.ShopListPresenter
 import dagger.Component
 import javax.inject.Singleton
 
@@ -20,4 +21,5 @@ interface AppComponent {
     fun inject(mainPresenter: MainPresenter)
     fun inject(loginPresenter: LoginPresenter)
     fun inject(registrationPresenter: RegistrationPresenter)
+    fun inject(shopListPresenter: ShopListPresenter)
 }

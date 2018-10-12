@@ -43,4 +43,7 @@
     <string name="places">Места</string>
     <string name="shopping">Покупки</string>
     <string name="cash_back">Кэшбэк</string>
+    <string name="shops">Магазины</string>
+    <string name="coalitions">Коалиции</string>
+    <string name="loading_error">Произошла ошибка при загрузке данных</string>
 </resources>

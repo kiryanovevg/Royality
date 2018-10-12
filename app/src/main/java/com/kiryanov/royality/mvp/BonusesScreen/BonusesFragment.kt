@@ -11,6 +11,7 @@ import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.kiryanov.royality.R
 import com.kiryanov.royality.mvp.MainScreen.MainActivity
+import com.kiryanov.royality.mvp.MyBonusesScreen.MyBonusesFragment
 import com.kiryanov.royality.mvp.PlacesScreen.PlacesFragment
 
 class BonusesFragment : MvpAppCompatFragment(),
@@ -43,6 +44,8 @@ class BonusesFragment : MvpAppCompatFragment(),
                 return true
             }
             R.id.bonuses -> {
+                if (currentFragment !is MyBonusesFragment)
+                    presenter.setFragment(MyBonusesFragment(), R.string.bonuses)
                 return true
             }
             R.id.shopping -> {

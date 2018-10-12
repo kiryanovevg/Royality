@@ -12,7 +12,7 @@ import android.widget.Toast
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.kiryanov.royality.R
-import com.kiryanov.royality.RecyclerViewAdapter
+import com.kiryanov.royality.adapters.RecyclerViewAdapter
 import com.kiryanov.royality.data.Category
 import com.kiryanov.royality.databinding.FragmentPlacesBinding
 
@@ -60,7 +60,7 @@ class PlacesFragment : MvpAppCompatFragment(), PlacesView {
         )
         rv.addItemDecoration(object : RecyclerView.ItemDecoration() {
             override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
-                val offset = resources.getDimension(R.dimen.recycler_view_offset).toInt()
+                val offset = resources.getDimension(R.dimen.recycler_view_horizontal_offset).toInt()
 
                 if (parent.getChildAdapterPosition(view) == 0) {
                     outRect.left += offset

@@ -1,4 +1,4 @@
-package com.kiryanov.royality;
+package com.kiryanov.royality.adapters;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
@@ -7,6 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.kiryanov.royality.BR;
 
 import java.util.ArrayList;
 import java.util.List;

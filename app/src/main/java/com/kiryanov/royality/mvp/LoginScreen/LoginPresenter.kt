@@ -6,9 +6,9 @@ import com.arellomobile.mvp.InjectViewState
 import com.evgeniy.royality.App
 import com.kiryanov.royality.CurrentUser
 import com.kiryanov.royality.R
+import com.kiryanov.royality.data.MockData
 import com.kiryanov.royality.data.Repository
 import com.kiryanov.royality.mvp.BasePresenter
-import com.kiryanov.royality.user_response
 import javax.inject.Inject
 
 @InjectViewState
@@ -36,8 +36,10 @@ class LoginPresenter : BasePresenter<LoginView>() {
             Thread.sleep(3000)
 
             Handler(context.mainLooper).post({
-                if (login == "1" && passwordHash == "1".hashCode()) {
-                    CurrentUser.getInstance().login(user_response)
+                var json: String? = MockData.getUser(login, passwordHash)
+
+                if (json != null) {
+                    CurrentUser.getInstance().login(json)
                     viewState.loginSuccessful()
                 } else {
                     viewState.showMessage(R.string.login_failed)
