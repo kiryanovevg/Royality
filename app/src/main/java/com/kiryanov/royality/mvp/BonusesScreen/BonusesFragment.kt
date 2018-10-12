@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.kiryanov.royality.R
+import com.kiryanov.royality.mvp.CashBackScreen.CashBackFragment
 import com.kiryanov.royality.mvp.MainScreen.MainActivity
 import com.kiryanov.royality.mvp.MyBonusesScreen.MyBonusesFragment
 import com.kiryanov.royality.mvp.PlacesScreen.PlacesFragment
@@ -52,6 +53,8 @@ class BonusesFragment : MvpAppCompatFragment(),
                 return true
             }
             R.id.cash_back -> {
+                if (currentFragment !is CashBackFragment)
+                    presenter.setFragment(CashBackFragment(), R.string.cash_back)
                 return true
             }
         }
