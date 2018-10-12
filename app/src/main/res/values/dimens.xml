@@ -7,4 +7,6 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="map_height">220dp</dimen>
     <dimen name="long_btn_width">250dp</dimen>
+    <dimen name="places_bottom_bar">150dp</dimen>
+    <dimen name="recycler_view_offset">48dp</dimen>
 </resources>

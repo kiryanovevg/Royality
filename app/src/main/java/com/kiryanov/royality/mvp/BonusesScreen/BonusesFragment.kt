@@ -24,7 +24,7 @@ class BonusesFragment : MvpAppCompatFragment(),
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        val view = inflater.inflate(R.layout.fragment_places, container, false)
+        val view = inflater.inflate(R.layout.fragment_bonuses, container, false)
 
         val navigationView = view.findViewById<BottomNavigationView>(R.id.bottom_navigation)
         navigationView.setOnNavigationItemSelectedListener(this)

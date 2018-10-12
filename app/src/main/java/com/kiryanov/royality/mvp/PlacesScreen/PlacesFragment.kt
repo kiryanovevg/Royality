@@ -1,6 +1,5 @@
 package com.kiryanov.royality.mvp.PlacesScreen
 
-import android.animation.ValueAnimator
 import android.databinding.DataBindingUtil
 import android.graphics.Rect
 import android.os.Bundle
@@ -15,7 +14,7 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import com.kiryanov.royality.R
 import com.kiryanov.royality.RecyclerViewAdapter
 import com.kiryanov.royality.data.Category
-import com.kiryanov.royality.databinding.FragmentBonusesBinding
+import com.kiryanov.royality.databinding.FragmentPlacesBinding
 
 
 class PlacesFragment : MvpAppCompatFragment(), PlacesView {
@@ -25,42 +24,28 @@ class PlacesFragment : MvpAppCompatFragment(), PlacesView {
     @InjectPresenter
     lateinit var presenter: PlacesPresenter
 
-    private lateinit var binding: FragmentBonusesBinding
+    private lateinit var binding: FragmentPlacesBinding
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_bonuses, container, false)
+        binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_places, container, false)
 
         initRV(binding.rv)
 
         binding.btnFullscreen.setOnClickListener{
-            val minHeight = resources.getDimension(R.dimen.map_height).toInt()
-            val height = if (binding.mapRoot.measuredHeight == minHeight) {
+            val visibility= if (binding.rv.visibility == View.VISIBLE) {
                 binding.btnFullscreen.setImageResource(R.drawable.ic_fullscreen_exit)
-
-                binding.rootLayout.measuredHeight
+                View. GONE
             } else {
                 binding.btnFullscreen.setImageResource(R.drawable.ic_fullscreen)
-
-                minHeight
+                View.VISIBLE
             }
 
-            val anim = ValueAnimator.ofInt(binding.mapRoot.measuredHeight, height)
-            anim.addUpdateListener { valueAnimator ->
-                val value = valueAnimator.animatedValue as Int
-                val layoutParams = binding.mapRoot.layoutParams
-                layoutParams.height = value
-                binding.mapRoot.layoutParams = layoutParams
-
-                val alpha = 1 - (value - minHeight) * 1.0 / (binding.rootLayout.measuredHeight - minHeight)
-                binding.rootLayout.alpha = alpha.toFloat()
-            }
-            anim.duration = 700
-            anim.start()
+            binding.rv.visibility = visibility
+            binding.buttonBar.visibility = visibility
         }
-
 
         return binding.root
     }
@@ -75,7 +60,7 @@ class PlacesFragment : MvpAppCompatFragment(), PlacesView {
         )
         rv.addItemDecoration(object : RecyclerView.ItemDecoration() {
             override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
-                val offset = 120
+                val offset = resources.getDimension(R.dimen.recycler_view_offset).toInt()
 
                 if (parent.getChildAdapterPosition(view) == 0) {
                     outRect.left += offset
