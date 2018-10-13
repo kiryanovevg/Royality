@@ -12,4 +12,5 @@ interface ShopListView : MvpView {
     fun setErrorMessageVisibility(visibility: Boolean)
     fun setList(list: ArrayList<Shop>)
     fun setRecyclerViewVisibility(visibility: Boolean)
+    fun setErrorMessage(msg: Int)
 }

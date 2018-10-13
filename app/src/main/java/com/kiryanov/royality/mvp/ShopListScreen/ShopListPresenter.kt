@@ -2,6 +2,7 @@ package com.kiryanov.royality.mvp.ShopListScreen
 
 import com.arellomobile.mvp.InjectViewState
 import com.evgeniy.royality.App
+import com.kiryanov.royality.R
 import com.kiryanov.royality.data.Repository
 import com.kiryanov.royality.data.Shop
 import com.kiryanov.royality.mvp.BasePresenter
@@ -43,14 +44,20 @@ class ShopListPresenter : BasePresenter<ShopListView>() {
                     }
 
                     override fun onError(e: Throwable) {
+                        viewState.setErrorMessage(R.string.loading_error)
                         viewState.setErrorMessageVisibility(true)
                         viewState.setLoadingProgressVisibility(false)
                     }
 
                     override fun onComplete() {
-                        viewState.setList(list)
+                        if (list.isEmpty()) {
+                            viewState.setErrorMessage(R.string.empty_list)
+                            viewState.setErrorMessageVisibility(true)
+                        } else {
+                            viewState.setList(list)
+                            viewState.setRecyclerViewVisibility(true)
+                        }
                         viewState.setLoadingProgressVisibility(false)
-                        viewState.setRecyclerViewVisibility(true)
                     }
                 })
     }

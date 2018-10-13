@@ -46,4 +46,5 @@
     <string name="shops">Магазины</string>
     <string name="coalitions">Коалиции</string>
     <string name="loading_error">Произошла ошибка при загрузке данных</string>
+    <string name="empty_list">Список пуст</string>
 </resources>

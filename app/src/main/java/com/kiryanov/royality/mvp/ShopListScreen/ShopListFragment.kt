@@ -59,6 +59,10 @@ class ShopListFragment : MvpAppCompatFragment(), ShopListView, SwipeRefreshLayou
         adapter.addAllWithClear(list)
     }
 
+    override fun setErrorMessage(msg: Int) {
+        binding.tvError.text = getString(msg)
+    }
+
     override fun setLoadingProgressVisibility(visibility: Boolean) {
         binding.refresh.isRefreshing = visibility
     }

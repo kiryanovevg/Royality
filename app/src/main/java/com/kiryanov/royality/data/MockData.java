@@ -70,14 +70,50 @@ public class MockData {
         }
 
         if (login.equals("2") && hash == "2".hashCode()) {
+            return "{  \n" +
+                    "   \"id\":\"2\",\n" +
+                    "   \"phone\":\"8-906-142-43-54\",\n" +
+                    "   \"sex\":\"m\",\n" +
+                    "   \"name\":\"Alex\",\n" +
+                    "   \"surname\":\" Perepechaev \",\n" +
+                    "   \"patronymic\":\"Victorocich\",\n" +
+                    "   \"city\":\"Rostov-on-Don\"\n" +
+                    "}";
+        }
+
+        if (login.equals("3") && hash == "3".hashCode()) {
             return "{\n" +
-                    "        \"id\":2,\n" +
-                    "        \"phone\":\"8-999-444-92-91\",\n" +
-                    "        \"sex\":\"m\",\n" +
-                    "        \"name\":\"Михаил\",\n" +
-                    "        \"surname\":\"Фамилия\",\n" +
-                    "        \"patronymic\":\"Отчество\",\n" +
-                    "\t\"city\":\"Rostov\"\n" +
+                    "   \"id\":\"3\",\n" +
+                    "   \"phone\":\"8-951-742-84-24\",\n" +
+                    "   \"sex\":\"m\",\n" +
+                    "   \"name\":\"Sergey\",\n" +
+                    "   \"surname\":\" Butenko\",\n" +
+                    "   \"patronymic\":\"Sergeevich\",\n" +
+                    "   \"city\":\"Sochi\"\n" +
+                    "}";
+        }
+
+        if (login.equals("4") && hash == "4".hashCode()) {
+            return "{\n" +
+                    "   \"id\":\"4\",\n" +
+                    "   \"phone\":\"8-906-345-23-53\",\n" +
+                    "   \"sex\":\"f\",\n" +
+                    "   \"name\":\"Sveta \",\n" +
+                    "   \"surname\":\"Farafonova\",\n" +
+                    "   \"patronymic\":\"Andreevna\",\n" +
+                    "   \"city\":\"Sochi\"\n" +
+                    "}";
+        }
+
+        if (login.equals("5") && hash == "5".hashCode()) {
+            return "{\n" +
+                    "   \"id\":\"5\",\n" +
+                    "   \"phone\":\"8-900-453-23-14\",\n" +
+                    "   \"sex\":\"f\",\n" +
+                    "   \"name\":\"Dariana\",\n" +
+                    "   \"surname\":\"Dariana\",\n" +
+                    "   \"patronymic\":\"Victorovna\",\n" +
+                    "   \"city\":\"Rostov-on-Don\"\n" +
                     "}";
         }
 
