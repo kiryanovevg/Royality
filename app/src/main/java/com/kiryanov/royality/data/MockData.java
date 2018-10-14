@@ -21,6 +21,7 @@ public class MockData {
                     "Cafe",
                     5,
                     R.drawable.ic_shop_4,
+                    R.drawable.image_shop_5,
                     125
             ));
 
@@ -33,9 +34,10 @@ public class MockData {
                     "We sell sporting goods of the best brands of Europe. The store has numerous discount and bonus programs.",
                     "15%",
                     new Category("Sport", R.drawable.ic_home_black),
-                    "-",
+                    "Sport",
                     4,
                     R.drawable.ic_shop_2,
+                    R.drawable.image_shop_4,
                     12
             ));
 
@@ -48,9 +50,10 @@ public class MockData {
                     "The newest virtual reality attraction is waiting for you. Plunge into the world of space battles!",
                     "25%",
                     new Category("Game", R.drawable.ic_debit_card),
-                    "-",
+                    "Video Games",
                     3,
                     R.drawable.ic_shop_1,
+                    R.drawable.image_shop_1,
                     51321
             ));
         }};

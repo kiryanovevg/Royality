@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
+import com.kiryanov.royality.EXTRA_SHOP
 import com.kiryanov.royality.R
 import com.kiryanov.royality.adapters.RecyclerViewAdapter
 import com.kiryanov.royality.data.Shop
@@ -54,7 +55,9 @@ class ShopListFragment : MvpAppCompatFragment(), ShopListView, SwipeRefreshLayou
     }
 
     override fun showShopInfo(item: Shop) {
-        startActivity(Intent(context, ShopActivity::class.java))
+        val intent = Intent(context, ShopActivity::class.java)
+        intent.putExtra(EXTRA_SHOP, item)
+        startActivity(intent)
     }
 
     override fun onRefresh() {

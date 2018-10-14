@@ -6,3 +6,5 @@ const val REQUEST_REGISTRATION = 11
 const val USER_DATA = "user_data"
 const val USER_JSON = "user_json"
 const val WITHOUT_LOGIN = "without_login"
+
+const val EXTRA_SHOP = "extra_shop"
