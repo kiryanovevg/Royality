@@ -47,4 +47,9 @@
     <string name="coalitions">Коалиции</string>
     <string name="loading_error">Произошла ошибка при загрузке данных</string>
     <string name="empty_list">Список пуст</string>
+    <string name="lorem_ipsum">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</string>
+    <string name="bill">Баланс</string>
+    <string name="your_bill">Ваш баланс</string>
+    <string name="address">Ближайший адрес</string>
+    <string name="show_on_map">Показать на карте</string>
 </resources>

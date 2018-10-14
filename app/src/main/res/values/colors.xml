@@ -12,4 +12,5 @@
     <color name="corner_border">#eaf9ff</color>
 
     <color name="nav_view_header_background">#ebf8ff</color>
+    <color name="image_foreground">#70bebebe</color>
 </resources>

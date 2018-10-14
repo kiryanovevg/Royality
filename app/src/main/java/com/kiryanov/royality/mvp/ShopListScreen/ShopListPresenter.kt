@@ -24,7 +24,7 @@ class ShopListPresenter : BasePresenter<ShopListView>() {
     }
 
     fun onItemClick(item: Shop) {
-
+        viewState.showShopInfo(item)
     }
 
     fun loading() {

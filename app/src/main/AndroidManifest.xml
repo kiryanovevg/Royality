@@ -29,9 +29,8 @@
         <activity android:name=".mvp.GreetingScreen.GreetingActivity"></activity>
         <activity android:name=".mvp.LoginScreen.LoginActivity"></activity>
         <activity android:name=".mvp.RegistrationScreen.RegistrationActivity"></activity>
-        <activity
-            android:name=".Main2Activity"
-            android:label="@string/title_activity_main2"></activity>
+        <activity android:name=".mvp.ShopScreen.ShopActivity"></activity>
+
     </application>
 
 </manifest>

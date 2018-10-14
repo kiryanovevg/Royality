@@ -2,6 +2,7 @@ package com.kiryanov.royality.mvp.ShopListScreen
 
 import com.arellomobile.mvp.MvpView
 import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy
+import com.arellomobile.mvp.viewstate.strategy.SkipStrategy
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
 import com.kiryanov.royality.data.Shop
 
@@ -13,4 +14,7 @@ interface ShopListView : MvpView {
     fun setList(list: ArrayList<Shop>)
     fun setRecyclerViewVisibility(visibility: Boolean)
     fun setErrorMessage(msg: Int)
+
+    @StateStrategyType(SkipStrategy::class)
+    fun showShopInfo(item: Shop)
 }

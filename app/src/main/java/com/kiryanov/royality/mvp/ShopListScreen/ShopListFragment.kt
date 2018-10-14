@@ -1,5 +1,6 @@
 package com.kiryanov.royality.mvp.ShopListScreen
 
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.graphics.Rect
 import android.os.Bundle
@@ -16,6 +17,7 @@ import com.kiryanov.royality.R
 import com.kiryanov.royality.adapters.RecyclerViewAdapter
 import com.kiryanov.royality.data.Shop
 import com.kiryanov.royality.databinding.RecyclerLayoutBinding
+import com.kiryanov.royality.mvp.ShopScreen.ShopActivity
 
 class ShopListFragment : MvpAppCompatFragment(), ShopListView, SwipeRefreshLayout.OnRefreshListener {
 
@@ -49,6 +51,10 @@ class ShopListFragment : MvpAppCompatFragment(), ShopListView, SwipeRefreshLayou
         })
 
         return binding.root
+    }
+
+    override fun showShopInfo(item: Shop) {
+        startActivity(Intent(context, ShopActivity::class.java))
     }
 
     override fun onRefresh() {
