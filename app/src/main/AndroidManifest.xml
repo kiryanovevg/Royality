@@ -30,6 +30,7 @@
         <activity android:name=".mvp.LoginScreen.LoginActivity"></activity>
         <activity android:name=".mvp.RegistrationScreen.RegistrationActivity"></activity>
         <activity android:name=".mvp.ShopScreen.ShopActivity"></activity>
+        <activity android:name=".mvp.CoalitionScreen.CoalitionActivity"></activity>
 
     </application>
 

@@ -122,4 +122,19 @@ public class MockData {
 
         return null;
     }
+
+    public static Coalition getCoalition() {
+        return new Coalition(
+                "Bestshops",
+                "Spend your bonuses in any of our stores! We also have a lot of common discount programs.",
+                new ArrayList<Shop>() {{
+                    add(getShopList().get(1));
+                    add(getShopList().get(2));
+                }},
+                R.drawable.ic_shop_3,
+                R.drawable.image_shop_3,
+                13,
+                "24%"
+        );
+    }
 }

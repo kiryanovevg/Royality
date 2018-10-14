@@ -19,12 +19,7 @@ public class Repository {
     }
 
     public Observable<Shop> loadShopList() {
-        int userId = -1;
-        User currentUser = CurrentUser.getInstance().getUser();
-        if (currentUser != null) {
-            userId = currentUser.getId();
-        }
-        int finalUserId = userId;
+        int userId = CurrentUser.getInstance().getCurrentUserId();
 
         Observable<Shop> observable1 = getShopObservable(api.connect1(), 0, userId);
         Observable<Shop> observable2 = getShopObservable(api.connect2(), 1, userId);
@@ -48,5 +43,28 @@ public class Repository {
 
                     return shop;
                 });
+    }
+
+    public Observable<Coalition> loadCoalitionList() {
+        int userId = CurrentUser.getInstance().getCurrentUserId();
+
+        return Observable.just(MockData.getCoalition())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+
+        /*return api.connectCoalition()
+                .flatMap(Observable::fromIterable)
+                .filter(cordaUser -> cordaUser.getCorId() == userId)
+                .toList()
+                .toObservable()
+                .flatMap(Observable::fromIterable)
+                .map(cordaUser -> {
+                    CoalitionView coalition = MockData.getCoalition();
+                    coalition.setBill(cordaUser.getBill());
+
+                    return coalition;
+                })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());*/
     }
 }

@@ -29,6 +29,16 @@ public class CurrentUser {
         return instance;
     }
 
+    public int getCurrentUserId() {
+        int userId = -1;
+        User currentUser = getUser();
+        if (currentUser != null) {
+            userId = currentUser.getId();
+        }
+
+        return userId;
+    }
+
     public User getUser() {
         User user = null;
 

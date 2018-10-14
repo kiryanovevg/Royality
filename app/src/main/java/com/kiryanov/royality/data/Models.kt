@@ -36,6 +36,47 @@ data class Category(val name: String, val resId: Int) : Parcelable {
     }
 }
 
+data class Coalition(val name: String,
+                     val description: String,
+                     val shops: List<Shop>,
+                     val icon: Int,
+                     val image: Int,
+                     var bill: Int,
+                     val loyalty: String) : Parcelable {
+    constructor(parcel: Parcel) : this(
+            parcel.readString(),
+            parcel.readString(),
+            parcel.createTypedArrayList(Shop),
+            parcel.readInt(),
+            parcel.readInt(),
+            parcel.readInt(),
+            parcel.readString())
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(name)
+        parcel.writeString(description)
+        parcel.writeTypedList(shops)
+        parcel.writeInt(icon)
+        parcel.writeInt(image)
+        parcel.writeInt(bill)
+        parcel.writeString(loyalty)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<Coalition> {
+        override fun createFromParcel(parcel: Parcel): Coalition {
+            return Coalition(parcel)
+        }
+
+        override fun newArray(size: Int): Array<Coalition?> {
+            return arrayOfNulls(size)
+        }
+    }
+}
+
 data class Shop(val name: String,
                 val city: String,
                 val address: String,

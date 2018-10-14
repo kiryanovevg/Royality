@@ -10,6 +10,7 @@ import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.kiryanov.royality.R
 import com.kiryanov.royality.adapters.ViewPagerAdapter
+import com.kiryanov.royality.mvp.CoalitionListScreen.CoalitionListFragment
 import com.kiryanov.royality.mvp.ShopListScreen.ShopListFragment
 
 class MyBonusesFragment : MvpAppCompatFragment(), MyBonusesView {
@@ -32,7 +33,7 @@ class MyBonusesFragment : MvpAppCompatFragment(), MyBonusesView {
         tabLayout.setupWithViewPager(viewPager)
 
         adapter.addFragment(ShopListFragment(), getString(R.string.shops))
-        adapter.addFragment(ShopListFragment(), getString(R.string.coalitions))
+        adapter.addFragment(CoalitionListFragment(), getString(R.string.coalitions))
 
         return view
     }

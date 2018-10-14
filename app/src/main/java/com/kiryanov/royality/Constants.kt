@@ -8,3 +8,4 @@ const val USER_JSON = "user_json"
 const val WITHOUT_LOGIN = "without_login"
 
 const val EXTRA_SHOP = "extra_shop"
+const val EXTRA_COALITION = "extra_coalition"

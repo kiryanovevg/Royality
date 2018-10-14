@@ -16,4 +16,7 @@ interface Api {
 
     @GET("http://51.145.142.95:10018/api/example/get-user")
     fun connect3(): Observable<List<CordaUser>>
+
+        @GET("http://51.145.142.95:10024/api/example/get-user")
+    fun connectCoalition(): Observable<List<CordaUser>>
 }
