@@ -2,18 +2,11 @@ package com.kiryanov.royality.mvp.MapScreen
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.Canvas
 import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.VectorDrawable
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
-import com.kiryanov.royality.EXTRA_COORDINATE
-import com.kiryanov.royality.EXTRA_LIST
-import com.kiryanov.royality.EXTRA_TYPE
-import com.kiryanov.royality.R
+import com.kiryanov.royality.*
 import com.kiryanov.royality.data.Coordinate
 import kotlinx.android.synthetic.main.activity_map.*
 import org.osmdroid.util.BoundingBox
@@ -70,7 +63,7 @@ class MapActivity : MvpAppCompatActivity(), IMapView {
         list.forEach {
             val marker = Marker(map_view)
 
-            marker.icon = BitmapDrawable(resources, getIcon())
+            marker.icon = BitmapDrawable(resources, getIcon(this))
             marker.setOnMarkerClickListener({ _, _ -> true })
             marker.position = GeoPoint(
                     it.lat, it.lng
@@ -100,31 +93,5 @@ class MapActivity : MvpAppCompatActivity(), IMapView {
 
     override fun zoomToBoundingBox(boundingBox: BoundingBox, animate: Boolean) {
         map_view.zoomToBoundingBox(boundingBox, true)
-    }
-
-    private fun getIcon(): Bitmap {
-        val drawable = ContextCompat.getDrawable(this, R.drawable.ic_location_red)
-        val vectorDrawable = drawable as VectorDrawable?
-        val scaleSize = 2f
-
-        return getScaledBitmapFromVectorDrawable(vectorDrawable!!, scaleSize)
-    }
-
-    private fun getScaledBitmapFromVectorDrawable(vectorDrawable: VectorDrawable,
-                                                  scaleSize: Float): Bitmap {
-
-        val scaledWidth = (vectorDrawable.intrinsicWidth * scaleSize).toInt()
-        val scaledHeight = (vectorDrawable.intrinsicHeight * scaleSize).toInt()
-
-        val bitmap = Bitmap.createBitmap(
-                scaledWidth,
-                scaledHeight,
-                Bitmap.Config.ARGB_8888
-        )
-        val canvas = Canvas(bitmap)
-        vectorDrawable.setBounds(0, 0, canvas.width, canvas.height)
-        vectorDrawable.draw(canvas)
-
-        return bitmap
     }
 }

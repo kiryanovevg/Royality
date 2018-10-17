@@ -2,6 +2,7 @@ package com.kiryanov.royality.mvp.PlacesScreen
 
 import android.databinding.DataBindingUtil
 import android.graphics.Rect
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -15,6 +16,10 @@ import com.kiryanov.royality.R
 import com.kiryanov.royality.adapters.RecyclerViewAdapter
 import com.kiryanov.royality.data.Category
 import com.kiryanov.royality.databinding.FragmentPlacesBinding
+import com.kiryanov.royality.getIcon
+import kotlinx.android.synthetic.main.activity_map.*
+import org.osmdroid.util.GeoPoint
+import org.osmdroid.views.overlay.Marker
 
 
 class PlacesFragment : MvpAppCompatFragment(), PlacesView {
@@ -100,6 +105,17 @@ class PlacesFragment : MvpAppCompatFragment(), PlacesView {
 
         adapter.addAll(list)
         adapter.notifyDataSetChanged()
+    }
+
+    override fun showShops(list: List<GeoPoint>) {
+        list.forEach {
+            val marker = Marker(binding.mapView)
+
+            marker.icon = BitmapDrawable(resources, getIcon(context!!))
+            marker.setOnMarkerClickListener({ _, _ -> true })
+            marker.position = it
+            map_view.overlays.add(marker)
+        }
     }
 
     override fun showMessage(msg: String) {
