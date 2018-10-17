@@ -57,14 +57,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@{`Баланс: ` + item.bill}"
+                    android:text="@{String.format(@string/format_balance, item.bill)}"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@{`Скидка до ` + item.loyalty}"
+                    android:text="@{String.format(@string/format_discount, item.loyalty)}"
                     />
 
             </LinearLayout>

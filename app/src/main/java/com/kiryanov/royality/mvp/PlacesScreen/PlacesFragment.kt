@@ -73,7 +73,7 @@ class PlacesFragment : MvpAppCompatFragment(), PlacesView {
 
         val list = object : ArrayList<Category>() {
             init {
-                add(Category("Еда", R.drawable.ic_coffe_cup))
+                /*add(Category("Еда", R.drawable.ic_coffe_cup))
                 add(Category("Авто", R.drawable.ic_car_repair))
                 add(Category("Спорт", R.drawable.ic_sport))
                 add(Category("Красота", R.drawable.ic_beauty))
@@ -83,7 +83,18 @@ class PlacesFragment : MvpAppCompatFragment(), PlacesView {
                 add(Category("Образование", R.drawable.ic_education))
                 add(Category("Досуг", R.drawable.ic_leisure))
                 add(Category("Магазины", R.drawable.ic_shop))
-                add(Category("Сфера услуг", R.drawable.ic_service))
+                add(Category("Сфера услуг", R.drawable.ic_service))*/
+                add(Category("Food", R.drawable.ic_coffe_cup))
+                add(Category("Car", R.drawable.ic_car_repair))
+                add(Category("Sport", R.drawable.ic_sport))
+                add(Category("Beauty", R.drawable.ic_beauty))
+                add(Category("Finance", R.drawable.ic_finance))
+                add(Category("Building", R.drawable.ic_build))
+                add(Category("B2B", R.drawable.ic_network))
+                add(Category("Education", R.drawable.ic_education))
+                add(Category("Leisure", R.drawable.ic_leisure))
+                add(Category("Shops", R.drawable.ic_shop))
+                add(Category("Service", R.drawable.ic_service))
             }
         }
 
