@@ -13,7 +13,7 @@ class MainPresenter : BasePresenter<MainView>() {
         super.onFirstViewAttach()
 
         setFragment(BonusesFragment(), R.string.places)
-        viewState.setFirstItemChecked()
+        viewState.setItemChecked(0)
     }
 
     fun setFragment(fragment: Fragment, title: Int) {

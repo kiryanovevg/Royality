@@ -16,5 +16,5 @@ interface MainView : MvpView {
     fun setFragment(fragment: Fragment)
 
     @StateStrategyType(OneExecutionStateStrategy::class)
-    fun setFirstItemChecked()
+    fun setItemChecked(num: Int)
 }

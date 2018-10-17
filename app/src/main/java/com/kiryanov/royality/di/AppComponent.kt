@@ -6,6 +6,7 @@ import com.evgeniy.restapp.DI.Modules.RepositoryModule
 import com.evgeniy.royality.App
 import com.kiryanov.royality.CurrentUser
 import com.kiryanov.royality.mvp.CoalitionListScreen.CoalitionListPresenter
+import com.kiryanov.royality.mvp.CouponsScreen.CouponsPresenter
 import com.kiryanov.royality.mvp.LoginScreen.LoginPresenter
 import com.kiryanov.royality.mvp.MainScreen.MainPresenter
 import com.kiryanov.royality.mvp.RegistrationScreen.RegistrationPresenter
@@ -24,4 +25,5 @@ interface AppComponent {
     fun inject(registrationPresenter: RegistrationPresenter)
     fun inject(shopListPresenter: ShopListPresenter)
     fun inject(coalitionListPresenter: CoalitionListPresenter)
+    fun inject(couponsPresenter: CouponsPresenter)
 }

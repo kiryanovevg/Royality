@@ -67,4 +67,10 @@ public class Repository {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());*/
     }
+
+    public Observable<Coupon> loadCouponList() {
+        return Observable.fromIterable(MockData.getCoupons())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
 }

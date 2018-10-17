@@ -137,4 +137,30 @@ public class MockData {
                 "24%"
         );
     }
+
+    public static List<Coupon> getCoupons() {
+        return new ArrayList<Coupon>() {{
+            add(new Coupon(
+                    "\"Asian food\"",
+                    "Cafe",
+                    "При покупке 2-ух кофе получите 3 бесплатно",
+                    R.drawable.ic_qr_coupon_1,
+                    R.drawable.image_shop_5
+            ));
+            add(new Coupon(
+                    "\"Asian food\"",
+                    "Cafe",
+                    "При покупке 2-ух кофе получите 3 бесплатно",
+                    R.drawable.ic_qr_coupon_2,
+                    R.drawable.image_shop_5
+            ));
+            add(new Coupon(
+                    "\"Asian food\"",
+                    "Cafe",
+                    "При покупке 2-ух кофе получите 3 бесплатно",
+                    R.drawable.ic_qr_coupon_3,
+                    R.drawable.image_shop_5
+            ));
+        }};
+    }
 }

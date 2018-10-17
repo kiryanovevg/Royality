@@ -19,6 +19,7 @@ import com.kiryanov.royality.REQUEST_LOGIN
 import com.kiryanov.royality.data.User
 import com.kiryanov.royality.databinding.NavHeaderMainBinding
 import com.kiryanov.royality.mvp.BonusesScreen.BonusesFragment
+import com.kiryanov.royality.mvp.CouponsScreen.CouponsFragment
 import com.kiryanov.royality.mvp.GreetingScreen.GreetingActivity
 import com.kiryanov.royality.mvp.LoginScreen.LoginActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -81,7 +82,8 @@ class MainActivity : MvpAppCompatActivity(),
                     presenter.setFragment(BonusesFragment(), R.string.places)
             }
             R.id.coupons -> {
-
+                if (currentFragment !is CouponsFragment)
+                    presenter.setFragment(CouponsFragment(), R.string.coupons)
             }
             R.id.exit -> {
                 CurrentUser.getInstance().logout()
@@ -104,8 +106,8 @@ class MainActivity : MvpAppCompatActivity(),
         supportActionBar?.title = getString(title)
     }
 
-    override fun setFirstItemChecked() {
-        nav_view.menu.getItem(0).isChecked = true
+    override fun setItemChecked(num: Int) {
+        nav_view.menu.getItem(num).isChecked = true
     }
 
     override fun onBackPressed() {

@@ -163,3 +163,9 @@ data class Coordinate(val lat: Double, val lng: Double) : Parcelable {
 
 data class CordaUser(val corId: Int,
                      val bill: Int)
+
+data class Coupon(val name: String,
+                  val category: String,
+                  val text: String,
+                  val qr: Int,
+                  val image: Int)
