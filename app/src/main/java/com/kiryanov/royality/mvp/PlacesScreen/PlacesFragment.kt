@@ -73,16 +73,17 @@ class PlacesFragment : MvpAppCompatFragment(), PlacesView {
 
         val list = object : ArrayList<Category>() {
             init {
-                add(Category("Eda", R.drawable.ic_menu_compass))
-                add(Category("asd", R.drawable.ic_menu_camera))
-                add(Category("sad", R.drawable.ic_menu_manage))
-                add(Category("dsa", R.drawable.ic_menu_mylocation))
-                add(Category("asd", R.drawable.ic_menu_camera))
-                add(Category("sad", R.drawable.ic_menu_manage))
-                add(Category("dsa", R.drawable.ic_menu_share))
-                add(Category("asd", R.drawable.ic_menu_camera))
-                add(Category("sad", R.drawable.ic_menu_manage))
-                add(Category("dsa", R.drawable.ic_menu_manage))
+                add(Category("Еда", R.drawable.ic_coffe_cup))
+                add(Category("Авто", R.drawable.ic_car_repair))
+                add(Category("Спорт", R.drawable.ic_sport))
+                add(Category("Красота", R.drawable.ic_beauty))
+                add(Category("Финансы", R.drawable.ic_finance))
+                add(Category("Строительство", R.drawable.ic_build))
+                add(Category("B2B", R.drawable.ic_network))
+                add(Category("Образование", R.drawable.ic_education))
+                add(Category("Досуг", R.drawable.ic_leisure))
+                add(Category("Магазины", R.drawable.ic_shop))
+                add(Category("Сфера услуг", R.drawable.ic_service))
             }
         }
 

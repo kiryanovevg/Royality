@@ -10,6 +10,7 @@ import com.kiryanov.royality.EXTRA_SHOP
 import com.kiryanov.royality.R
 import com.kiryanov.royality.data.Shop
 import com.kiryanov.royality.databinding.ActivityShopBinding
+import com.kiryanov.royality.mvp.MapScreen.MapActivity
 import kotlinx.android.synthetic.main.app_bar_main.*
 
 class ShopActivity : MvpAppCompatActivity(), ShopView {
@@ -27,11 +28,15 @@ class ShopActivity : MvpAppCompatActivity(), ShopView {
 
         val shopItem = intent.getParcelableExtra<Shop>(EXTRA_SHOP)
         binding.item = shopItem
+
+        binding.tvShowOnMap.setOnClickListener {
+            startActivity(MapActivity.getIntent(ShopActivity@ this, shopItem.coordinate))
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
-         android.R.id.home -> onBackPressed()
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
         }
 
         return true

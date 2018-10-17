@@ -13,8 +13,10 @@ import com.kiryanov.royality.EXTRA_SHOP
 import com.kiryanov.royality.R
 import com.kiryanov.royality.adapters.RecyclerViewAdapter
 import com.kiryanov.royality.data.Coalition
+import com.kiryanov.royality.data.Coordinate
 import com.kiryanov.royality.data.Shop
 import com.kiryanov.royality.databinding.ActivityCoalitionBinding
+import com.kiryanov.royality.mvp.MapScreen.MapActivity
 import com.kiryanov.royality.mvp.ShopScreen.ShopActivity
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -33,14 +35,23 @@ class CoalitionActivity : MvpAppCompatActivity(), CoalitionView {
         setSupportActionBar(toolbar)
         (supportActionBar as ActionBar).setDisplayHomeAsUpEnabled(true)
 
-        val shopItem = intent.getParcelableExtra<Coalition>(EXTRA_COALITION)
-        binding.item = shopItem
+        val coalition = intent.getParcelableExtra<Coalition>(EXTRA_COALITION)
+        binding.item = coalition
+
+        binding.tvShowOnMap.setOnClickListener {
+            startActivity(MapActivity.getIntent(
+                    this,
+                    object : ArrayList<Coordinate>() { init {
+                        coalition.shops.forEach{ add(it.coordinate) }
+                    }}
+            ))
+        }
 
         adapter = RecyclerViewAdapter(R.layout.item_coalition_shop, presenter)
         binding.rv.adapter = adapter
         binding.rv.layoutManager = LinearLayoutManager(this)
 
-        adapter.addAll(shopItem.shops)
+        adapter.addAll(coalition.shops)
     }
 
     override fun showShopInfo(item: Shop) {
