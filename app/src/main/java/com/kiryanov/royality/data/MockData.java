@@ -22,7 +22,7 @@ public class MockData {
                     5,
                     R.drawable.ic_shop_4,
                     R.drawable.image_shop_5,
-                    125
+                    13
             ));
 
             add(new Shop(
@@ -38,7 +38,7 @@ public class MockData {
                     4,
                     R.drawable.ic_shop_2,
                     R.drawable.image_shop_4,
-                    12
+                    13
             ));
 
             add(new Shop(
@@ -54,7 +54,7 @@ public class MockData {
                     3,
                     R.drawable.ic_shop_1,
                     R.drawable.image_shop_1,
-                    51321
+                    13
             ));
         }};
     }

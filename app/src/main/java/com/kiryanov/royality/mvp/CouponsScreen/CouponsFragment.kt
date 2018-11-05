@@ -4,11 +4,14 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v4.widget.SwipeRefreshLayout
+import android.support.v7.app.AlertDialog
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.kiryanov.royality.R
@@ -53,7 +56,30 @@ class CouponsFragment : MvpAppCompatFragment(), CouponsView, SwipeRefreshLayout.
     }
 
     override fun showCouponInfo(item: Coupon) {
+        val view = ImageView(context)
+        view.setImageResource(item.qr)
 
+        val layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+
+        val density =  resources.displayMetrics.density.toInt()
+        layoutParams.topMargin = density * 12
+        layoutParams.bottomMargin = density * 12
+
+        view.layoutParams = layoutParams
+
+
+//        val view = LayoutInflater.from(context).inflate(R.layout.fragment_cash_back, null)
+//        view.findViewById<ImageView>(R.id.image_view).setImageResource(item.qr)
+
+        AlertDialog.Builder(context!!)
+                .setTitle(R.string.coupons)
+                .setView(view)
+                .setPositiveButton("Ok", null)
+                .create()
+                .show()
     }
 
     override fun onRefresh() {

@@ -8,15 +8,15 @@ interface Api {
     @GET("/api/example/get-user")
     fun getUsers(): Observable<List<User>>
 
-    @GET("http://51.145.142.95:10012/api/example/get-user")
+    @GET("http://40.113.122.2:10012/api/example/get-user")
     fun connect1(): Observable<List<CordaUser>>
 
-    @GET("http://51.145.142.95:10015/api/example/get-user")
+    @GET("http://40.113.122.2:10015/api/example/get-user")
     fun connect2(): Observable<List<CordaUser>>
 
-    @GET("http://51.145.142.95:10018/api/example/get-user")
+    @GET("http://40.113.122.2:10018/api/example/get-user")
     fun connect3(): Observable<List<CordaUser>>
 
-        @GET("http://51.145.142.95:10024/api/example/get-user")
+    @GET("http://40.113.122.2:10021/api/example/get-user")
     fun connectCoalition(): Observable<List<CordaUser>>
 }
