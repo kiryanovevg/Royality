@@ -10,6 +10,7 @@ import com.kiryanov.royality.R
 import com.kiryanov.royality.REQUEST_LOGIN
 import com.kiryanov.royality.mvp.LoginScreen.LoginActivity
 import com.kiryanov.royality.mvp.MainScreen.MainActivity
+import com.kiryanov.royality.mvp.MainScreen.NewMainActivity
 import kotlinx.android.synthetic.main.activity_greeting.*
 
 class GreetingActivity : MvpAppCompatActivity(), GreetingView {
@@ -41,7 +42,7 @@ class GreetingActivity : MvpAppCompatActivity(), GreetingView {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_LOGIN) {
             if (resultCode == Activity.RESULT_OK) {
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, NewMainActivity::class.java))
                 finish()
             }
         }

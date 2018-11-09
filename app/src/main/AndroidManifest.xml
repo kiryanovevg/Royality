@@ -26,6 +26,12 @@
             android:name=".mvp.MainScreen.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity
+            android:name=".mvp.MainScreen.NewMainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
         <activity android:name=".mvp.GreetingScreen.GreetingActivity"></activity>
         <activity android:name=".mvp.LoginScreen.LoginActivity"></activity>
         <activity android:name=".mvp.RegistrationScreen.RegistrationActivity"></activity>

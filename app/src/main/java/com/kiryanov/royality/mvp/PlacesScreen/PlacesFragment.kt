@@ -17,8 +17,6 @@ import com.kiryanov.royality.adapters.RecyclerViewAdapter
 import com.kiryanov.royality.data.Category
 import com.kiryanov.royality.databinding.FragmentPlacesBinding
 import com.kiryanov.royality.getIcon
-import com.kiryanov.royality.mvp.CouponsScreen.CouponsFragment
-import com.kiryanov.royality.mvp.MainScreen.MainActivity
 import kotlinx.android.synthetic.main.activity_map.*
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.overlay.Marker
@@ -51,12 +49,6 @@ class PlacesFragment : MvpAppCompatFragment(), PlacesView {
             }
 
             binding.rv.visibility = visibility
-            binding.buttonBar.visibility = visibility
-        }
-
-        binding.coupons.setOnClickListener {
-            (activity as MainActivity).presenter.setFragment(CouponsFragment(), R.string.coupons)
-            (activity as MainActivity).presenter.viewState.setItemChecked(1)
         }
 
         return binding.root
